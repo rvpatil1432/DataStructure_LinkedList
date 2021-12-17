@@ -118,9 +118,9 @@ public class LinkdedListDemo {
 		demo.addNodeAtLastPosition(56);
 		demo.addNodeAtLastPosition(30);
 		demo.addNodeAtLastPosition(70);
-		
+		demo.addNodeAtAnyPosition(2,40);
 		//print the linked list
 		demo.printLinkedList();
-		demo.search(30);
+		
 	}
 }
