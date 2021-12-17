@@ -74,14 +74,29 @@ public class LinkdedListDemo {
 		currentNode.addressOfNextNode = newNode;
 	}
 	//method to remove node at first position
-	public void removeFirstNode()
-    {
+	public void removeFirstNode() {
 		Node temp = head;
 		if(temp != null) {
 			temp = head;
 			head = temp.addressOfNextNode;
 		}
     }
+	//method to remove node at last position
+	public void removeLastNode() {
+		Node temp = head;
+		if(head != null) {
+			if(head.addressOfNextNode == null) {
+				head = null;
+			} else {
+				temp = this.head;
+				while(temp.addressOfNextNode.addressOfNextNode != null)
+					temp = temp.addressOfNextNode;
+				Node lastNode = temp.addressOfNextNode;
+				temp.addressOfNextNode = null; 
+				lastNode = null;
+			}
+		}
+	}
 	public static void main(String[] args) {
 		// Start with the empty list. 
 		LinkdedListDemo demo = new LinkdedListDemo();
@@ -90,7 +105,7 @@ public class LinkdedListDemo {
 		demo.addNodeAtLastPosition(56);
 		demo.addNodeAtLastPosition(30);
 		demo.addNodeAtLastPosition(70);
-		demo.removeFirstNode();
+		demo.removeLastNode();
 		//print the linked list
 		demo.printLinkedList();
 	}
