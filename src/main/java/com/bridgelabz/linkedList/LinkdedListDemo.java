@@ -23,8 +23,8 @@ class Node<T> {
  */
 public class LinkdedListDemo {
 	Node head;     // head of list
-	// Method to add a new node
-	public <T> void addNode(T data) {
+	// Method to add a new node at last
+	public <T> void addNodeAtLastPosition(T data) {
 		Node<T> temp = head;     //assign first node to temp
 
 		Node<T> newNode = new Node<T>(data);   // Create a new node with given data
@@ -61,10 +61,10 @@ public class LinkdedListDemo {
 		// Start with the empty list. 
 		LinkdedListDemo demo = new LinkdedListDemo();
 		
-		//add the values to list
-		demo.addNode(70);
-		demo.addNodeAtFirstPosition(30);//add value to list at first position
-		demo.addNodeAtFirstPosition(56);
+		//add the values to list at last position
+		demo.addNodeAtLastPosition(56);
+		demo.addNodeAtLastPosition(30);
+		demo.addNodeAtLastPosition(70);
 		//print the linked list
 		demo.printLinkedList();
 	}
