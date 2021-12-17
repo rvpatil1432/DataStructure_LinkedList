@@ -1,5 +1,6 @@
 package com.bridgelabz.linkedList;
 
+
 /*
  * @class represents linked list Node
  */
@@ -38,6 +39,12 @@ public class LinkdedListDemo {
 		}
 
 	}
+	//method to add node at beginning
+	public<T> void addNodeAtFirstPosition(T data) {
+		Node newNode = new Node(data);
+		newNode.addressOfNextNode = head;
+		head = newNode;//Insert the new_node to first node
+	}
 	// Method to print the LinkedList.
 	public void printLinkedList() {
 		Node temp = head;
@@ -55,10 +62,9 @@ public class LinkdedListDemo {
 		LinkdedListDemo demo = new LinkdedListDemo();
 		
 		//add the values to list
-		demo.addNode(56);
-		demo.addNode(30);
 		demo.addNode(70);
-		
+		demo.addNodeAtFirstPosition(30);//add value to list at first position
+		demo.addNodeAtFirstPosition(56);
 		//print the linked list
 		demo.printLinkedList();
 	}
