@@ -57,14 +57,30 @@ public class LinkdedListDemo {
 			temp = temp.addressOfNextNode;
 		}
 	}
+	//method to add node at any position
+	public<T> void addNodeAtAnyPosition(int index,T data) {
+		Node newNode = new Node(data);
+		if(index == 0) {
+			newNode.addressOfNextNode = head;
+			head = newNode;
+			return;
+		}
+		Node currentNode = head;
+		for (int i = 0; i < index-1; i++) {
+			currentNode = currentNode.addressOfNextNode;
+		}
+		
+		newNode.addressOfNextNode = currentNode.addressOfNextNode;
+		currentNode.addressOfNextNode = newNode;
+	}
 	public static void main(String[] args) {
 		// Start with the empty list. 
 		LinkdedListDemo demo = new LinkdedListDemo();
 		
 		//add the values to list at last position
 		demo.addNodeAtLastPosition(56);
-		demo.addNodeAtLastPosition(30);
 		demo.addNodeAtLastPosition(70);
+		demo.addNodeAtAnyPosition(1, 30);
 		//print the linked list
 		demo.printLinkedList();
 	}
