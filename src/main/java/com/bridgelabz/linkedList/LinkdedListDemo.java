@@ -97,6 +97,19 @@ public class LinkdedListDemo {
 			}
 		}
 	}
+	//method to search node with value
+	public<T> void search(T key) {
+		Node temp = head;
+		int index = 0;
+		while(temp != null) {
+			index ++;
+			if(temp.data.equals(key)) {
+				System.out.println("\n"+key+" is present at "+index);
+				break;
+			}
+			temp = temp.addressOfNextNode;
+		}
+	}
 	public static void main(String[] args) {
 		// Start with the empty list. 
 		LinkdedListDemo demo = new LinkdedListDemo();
@@ -105,8 +118,9 @@ public class LinkdedListDemo {
 		demo.addNodeAtLastPosition(56);
 		demo.addNodeAtLastPosition(30);
 		demo.addNodeAtLastPosition(70);
-		demo.removeLastNode();
+		
 		//print the linked list
 		demo.printLinkedList();
+		demo.search(30);
 	}
 }
